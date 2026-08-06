@@ -39,7 +39,7 @@ jobs:
         run: pip install nuitka
 
       - name: Compiler
-        run: python -m nuitka --onefile main.py
+        run: python -m nuitka --onefile main_firefox.py
 
       - name: Récupérer le EXE
         uses: actions/upload-artifact@v4
