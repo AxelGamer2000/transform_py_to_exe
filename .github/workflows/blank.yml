@@ -34,3 +34,15 @@ jobs:
         run: |
           python --version
           pip --version
+
+      - name: Installer Nuitka
+        run: pip install nuitka
+
+      - name: Compiler
+        run: python -m nuitka --onefile main.py
+
+      - name: Récupérer le EXE
+        uses: actions/upload-artifact@v4
+        with:
+          name: RapidFirefox-Windows
+          path: main_firefox.exe
